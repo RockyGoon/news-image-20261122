@@ -1,26 +1,36 @@
-# The World in One Day — 22 November 2026
+# One Day, One Page — Sunday 22 November 2026
 
 [![make.fun](https://make.fun/badge/news-image-20261122.svg)](https://make.fun/bounty/news-image-20261122)
 [![Rank](https://make.fun/badge/news-image-20261122/RockyGoon/news-image-20261122/rank.svg)](https://make.fun/bounty/news-image-20261122)
 [![Reward](https://make.fun/badge/news-image-20261122/RockyGoon/news-image-20261122/reward.svg)](https://make.fun/bounty/news-image-20261122)
 
-One image that sums up Sunday 22 November 2026's world news: **52 verified
-stories** — 7 featured (COP31 compromise text, Sparta II burning in the
-Baltic, BepiColombo in Mercury orbit, Cikande factory fire, tankers hit
-near the Strait of Hormuz, 'El Chapo Isidro' captured, Bitcoin back above
-$60,000) plus 45 more across 7 regions — with a world map, a UTC timeline,
-a date-audit panel and a day-in-figures panel.
+A single front page that sums up Sunday 22 November 2026's world news:
+**40 verified stories across 7 regions**, researched after the morning
+cutoff so the day's afternoon and evening developments are in, not just
+the overnight wires.
+
+The lead story is the outcome, not the overnight promise: **COP31
+collapsed in Antalya with no deal** after the EU and island states
+objected to a final text silent on fossil fuels — the first COP to fail
+since Copenhagen 2009. The twelve drawn cards below it carry the rest of
+the day's biggest developments: the 186-drone night over Ukraine and the
+Dymer block strike; the Sparta II towed out of Finnish waters; Iran's
+Patriot-radar claim in Bahrain beside Bahrain's and Washington's
+responses; the Cikande factory fire; 14 tankers staged at Kharg Island;
+the capture of 'Chapo Isidro'; Liverpool 4-0 Manchester United;
+Verstappen's 35-lead-change win in Las Vegas; India's record 720/9 in
+Wellington; Hong Kong's 98.79%-turnout polls; and Manipur's hooch toll
+reaching 17. Twenty-seven more verified stories fill the also-today
+columns, with a schematic world map, a UTC timeline, a day-in-figures
+strip and a date audit (40/40) at the foot of the page.
 
 Every story happened on 22 November 2026 in some time zone, or was first
-reported on 22 November with a new development. 21 November news already
-covered in the 21 November edition (Riyadh intercepts, Nigeria kidnapping,
-Peru quake, Bitcoin below $60k, COP31 overtime, Qeshm/Hormuz strikes, US
-stocks crash, Kyiv barrage, UK–EU deal, GTA VI, Anthropic, Tesla
-Argentina, Iraq base, Somalia rally, Bayelsa capsize, Blind Asia Cup,
-Gaza, Nvidia, gold) is deliberately excluded and listed in the image
-footer; only new 22 November angles of those stories are used. Full source
-list: see the work directory `SOURCES.md` (Reuters, AP, AFP, ISW, UKMTO,
-Xinhua, ANTARA, Nature, JTWC, NHC, PA Media and more).
+reported on 22 November with a new development. Where sources disagreed
+— the drone-night figure, the Cikande toll, the Bahrain claims — the
+image keeps the claims attributed instead of merging them. Saturday's
+football and rugby results, and other 21 November items with no new
+22 November angle, are deliberately left out. The full source list,
+with a URL and a time for every story, is kept with the build notes.
 
 ## Run
 
@@ -28,13 +38,14 @@ Xinhua, ANTARA, Nature, JTWC, NHC, PA Media and more).
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-`main.ts` copies `entry.png` (1024×1024, PNG) to the output directory and
-verifies the copy byte-for-byte (PNG magic + SHA-256). Running it twice
-produces identical bytes.
+`main.ts` copies `entry.png` (1024x1024 PNG, under 1 MiB) to the output
+directory and checks the copy before it returns: PNG magic bytes, the
+same SHA-256 as the file beside it, a 1024x1024 IHDR, and a size under
+the 1 MiB cap. Two runs write identical bytes.
 
 ## Files
 
-- `entry.png` — the front page (1024×1024)
+- `entry.png` — the front page (1024x1024)
 - `main.ts` — the entrypoint (copy + verify)
 - `LICENSE` — MIT
 
